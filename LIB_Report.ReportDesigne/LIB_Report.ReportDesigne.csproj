@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+ 
+
+  <ItemGroup>
+    <ProjectReference Include="..\LIB_Report.DAL\LIB_Report.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="22.1.6" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="22.1.6" />
+  </ItemGroup>
+
+  
+
+</Project>

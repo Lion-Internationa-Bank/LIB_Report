@@ -1,0 +1,63 @@
+<mat-card class="mat-elevation-z8">
+  <mat-card>
+    <mat-card-header class="custom-mat-card-header" fxLayout="row">
+      <div fxFlex="40">
+        <mat-card-title>{{'pageHeader.Settings' | translate}}</mat-card-title>
+      </div>
+      <div fxFlex fxLayoutAlign="end">
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <form  [formGroup]="settingsForm" novalidate (ngSubmit)="onSubmit()" fxLayout="column"
+            autocomplete="off">
+        <div fxLayout="column" fxLayoutAlign="" fxLayoutGap="2em" class="service-registration">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1em">
+            <mat-form-field fxFlex >
+              <mat-label>{{'settings.Fields.Email' | translate}}</mat-label>
+              <input matInput formControlName="Email"  type="email" />
+              <mat-error *ngIf="email.hasError('required')">
+                {{'settings.ValidationError.IsRequired' | translate}}
+              </mat-error>
+              <mat-error *ngIf="!email.hasError('required') && (email.hasError('pattern')) ">
+                {{'settings.ValidationError.InvalidEmail' | translate}}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex >
+              <mat-label>{{'settings.Fields.PhoneNumber' | translate}}</mat-label>
+              <input matInput formControlName="PhoneNumber"  required NaturalNumberOnlyDir/>
+              <mat-error *ngIf="phoneNumber.hasError('required')">
+                {{'settings.ValidationError.Required' | translate}}
+              </mat-error>
+              <mat-error *ngIf="!phoneNumber.hasError('required') && phoneNumber.hasError('pattern')">
+                {{'settings.ValidationError.EnterValidPhoneNumberOnly' | translate}}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex >
+              <mat-label>{{'User.editor.Language' | translate}}</mat-label>
+              <mat-select formControlName="Language" [compareWith]="compareIds">
+                <mat-option [value]="'et'">
+                  <span
+                    matTooltip="{{'User.editor.AmharicLanguage'|translate}}">{{'User.editor.AmharicLanguage'|translate}}</span>
+                </mat-option>
+                <mat-option [value]="'en'">
+                  <span
+                    matTooltip="{{'User.editor.EnglishLanguage'|translate}}">{{'User.editor.EnglishLanguage'|translate}}</span>
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="language.hasError('required')">
+                {{'settings.ValidationError.Required' | translate}}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <mat-card-actions fxLayoutAlign="end end">
+          <button type="submit" mat-raised-button color="primary"
+                  [disabled]="settingsForm.invalid">{{'common.commands.Save'|translate}}</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</mat-card>

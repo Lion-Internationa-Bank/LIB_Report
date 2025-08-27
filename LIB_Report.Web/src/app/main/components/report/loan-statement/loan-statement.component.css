@@ -1,0 +1,154 @@
+/* .dx-texteditor-input-container {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    align-items: baseline;
+  }
+  .dx-widget, .dx-widget *, .dx-widget ::after, .dx-widget ::before, .dx-widget::after, .dx-widget::before {
+    box-sizing: border-box;
+  }
+  .dx-dropdowneditor-input-wrapper {
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+  }
+  
+  .dx-widget input, .dx-widget textarea {
+    font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
+    line-height: 1.33334;
+  }
+  .dx-texteditor-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .dx-texteditor.dx-editor-outlined {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .dx-dropdowneditor.dx-dropdowneditor-field-clickable, .dx-dropdowneditor.dx-dropdowneditor-field-clickable .dx-texteditor-input {
+    cursor: pointer;
+  }
+  .dx-designer-viewport .dx-accessibility-focus-border-accented, .dx-designer-viewport .dx-accessibility-focus-border-accented:focus {
+    outline-color: #337AB7;
+  }
+  .dx-scrollable-container {
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .dx-scrollview-content {
+    position: static;
+  }
+  .dx-scrollable-container {
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .dx-scrollable-simulated .dx-scrollable-content {
+    overflow-anchor: none;
+  }
+  .dx-scrollable-both .dx-scrollable-content, .dx-scrollable-horizontal .dx-scrollable-content {
+    display: block;
+    float: left;
+    min-width: 100%;
+  }
+  .dx-scrollable-content {
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+  .dx-scrollable-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .dx-menu-base .dx-menu-item .dx-menu-item-content .dx-menu-item-popout-container .dx-menu-item-popout {
+    height: 100%;
+  }
+  .dx-menu .dx-menu-horizontal .dx-menu-item-popout {
+    font: 14px/14px DXIcons;
+    text-align: center;
+  }
+  .dx-menu-base .dx-menu-item-content .dx-menu-item-popout {
+    min-width: 7px;
+    min-height: 7px;
+  }
+  .dx-overlay-wrapper, .dx-overlay-wrapper *, .dx-overlay-wrapper ::after, .dx-overlay-wrapper ::before, .dx-overlay-wrapper::after, .dx-overlay-wrapper::before {
+    box-sizing: border-box;
+  }
+  .dx-menu-base .dx-menu-item .dx-menu-item-content {
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+  }
+  .dx-menu-base .dx-menu-item {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .dx-menu-item {
+    color: #333;
+  }
+  .dx-item {
+    outline: 0;
+  }
+  .dx-menu-base .dx-menu-item-wrapper, .dx-menu-base .dx-menu-items-container {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  }
+  .dx-context-menu .dx-menu-items-container {
+    padding: 1px;
+  }
+  .dx-menu-base .dx-menu-items-container {
+    list-style-type: none;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .dx-context-menu .dx-submenu {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 15%);
+  }
+  .dx-context-menu.dx-overlay-content {
+    overflow: inherit;
+    position: absolute;
+  }
+  .dx-context-menu {
+    color: #333;
+  }
+  .dx-menu-base {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: left;
+    color: #333;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
+    line-height: 1.33334;
+  }
+  .dx-overlay-content {
+    position: absolute;
+    pointer-events: auto;
+    z-index: 1000;
+    outline: 0;
+    overflow: hidden;
+  }
+  
+  .dx-scrollview-top-pocket{
+    display: none;
+  }
+   */

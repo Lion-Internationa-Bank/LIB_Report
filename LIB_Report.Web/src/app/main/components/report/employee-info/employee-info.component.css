@@ -1,0 +1,21 @@
+.btn-empid-search{
+    width: 100px;
+    height: 40px;
+    background-color: azure;
+}
+
+.btn-emp-search{
+    width: 200px;
+    height: 40px;
+    background-color: azure;
+}
+
+mat-toolbar{
+    height: 70px;
+    background-color: #324e6c;
+    color: white;
+}
+
+.cdk-overlay-pane{
+    width: fit-content !important;
+    }

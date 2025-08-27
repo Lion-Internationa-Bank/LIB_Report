@@ -1,0 +1,68 @@
+/* src/theme.scss */
+
+@use '@angular/material' as mat;
+
+// 1. Include Angular Material's core styles
+@include mat.core();
+
+// 2. Define your custom primary palette with all required hues
+$custom-primary: (
+  50:  #f4d7d9,
+  100: #ebc1c5,
+  200: #e4a9ad,
+  300: #df8f92,
+  400: #db7481,
+  500: #682622, // Your custom primary color
+  600: #5d2226,
+  700: #501d21,
+  800: #43191b,
+  900: #36151e,
+  A100: #f4d7d9,
+  A200: #ebc1c5,
+  A400: #df8f92,
+  A700: #db7481,
+  contrast: (
+    50: #f4d7d9,
+    100:#ebc1c5,
+    200:#e4a9ad,
+    300:#df8f92,
+    400:#db7481,
+    500:#682622,
+    600:#5d2226,
+    700:#501d21,
+    800:#43191b,
+    900:#36151e,
+    A100:#f4d7d9,
+    A200:#ebc1c5,
+    A400:#df8f92,
+    A700:#db7481,
+  ),
+);
+
+
+// 3. Define accent and warn palettes using predefined Angular Material palettes
+$app-primary: mat.define-palette($custom-primary,600, 'A400', 900);
+$app-accent: mat.define-palette(mat.$green-palette, 600, 'A400', 900);
+$app-warn: mat.define-palette(mat.$red-palette, 600, 'A400', 900);
+
+// 4. Create the overall theme
+$app-theme: mat.define-light-theme((
+  color: (
+    primary: $app-primary,
+    accent:  $app-accent,
+    warn:    $app-warn,
+  ),
+  density: -2, // Optional: Adjust density if needed
+));
+
+// 5. Apply the theme to all Angular Material components
+@include mat.all-component-themes($app-theme);
+
+.mat-toolbar {
+  background-color: mat.get-color-from-palette($app-primary);
+  color: white;
+}
+
+:root {
+  --primary-color: #{mat.get-color-from-palette($app-primary, 600)}; // Use the specific shade you want
+}

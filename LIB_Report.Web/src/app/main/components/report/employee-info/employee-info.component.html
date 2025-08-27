@@ -1,0 +1,95 @@
+
+
+
+<mat-toolbar color="primary">
+  <img mat-card-image src="/assets/LIB-logo.png" alt="" style="margin-left: 200px; margin-right: 15px; border-radius: 45%;">
+  <span>Lion International Bank</span>
+  <span class="example-spacer"></span>
+
+  <div style="right: 50px !important; position: absolute;">
+   <button mat-button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn"><mat-icon>person</mat-icon>{{userName}}</button>
+  </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changePassword()">Change Password</button>
+      <button mat-menu-item (click)="onLogout()">Logout</button>
+    </mat-menu>
+</mat-toolbar>
+<div class="p-8 grid grid-cols-1 alt" >
+    <div  [formGroup]="SearchEmployee" class="flex gap-4 items-center bg-white p-2 rounded shadow">
+      <div class="grid grid-cols-6 gap-4 ">
+      <mat-form-field class="example-full-width">
+        <mat-label>Employee Id</mat-label>
+        <input matInput formControlName="EmpId" placeholder="Employee Id" value="">
+      </mat-form-field>
+     
+      <button mat-stroked-button class="btn-empid-search" (click)="submitParameter()">
+        <mat-icon>search</mat-icon>
+      </button>
+
+      <mat-form-field>
+        <mat-label>Unit Category</mat-label>
+        <mat-select  (selectionChange)="categoryTypeChange($event.value)">
+          <mat-option value="">All</mat-option>
+          <mat-option value="0">Head Office</mat-option>
+          <mat-option value="1">Branch</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Unit</mat-label>
+        <mat-select formControlName="Unit" panelClass="select-content">
+          <mat-option  *ngFor="let category of BusinessCategoryList" [value]="category.UnitID">{{category.UnitName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="Gender">
+          <mat-option value="">All</mat-option>
+          <mat-option value="M">Male</mat-option>
+          <mat-option value="F">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Job Title</mat-label>
+        <mat-select formControlName="JobsTitle">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let jobtitle of jobsTitleList" [value]="jobtitle.JobID">{{jobtitle.JobTitle}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+     
+
+      <mat-form-field >
+        <mat-label> Employement Date From</mat-label>
+        <input formControlName="EmployementDateFrom"  matInput [matDatepicker]="DateFrom">
+        <mat-datepicker-toggle matSuffix [for]="DateFrom"></mat-datepicker-toggle>
+        <mat-datepicker #DateFrom></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label> Employement Date To</mat-label>
+        <input  formControlName="EmployementDateTo"  matInput [matDatepicker]="DateTo">
+        <mat-datepicker-toggle matSuffix [for]="DateTo"></mat-datepicker-toggle>
+        <mat-datepicker #DateTo></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="Status">
+          <mat-option value="A">Active</mat-option>
+          <mat-option value="I">InActive</mat-option>
+        </mat-select>
+      </mat-form-field>
+     
+
+      <button mat-stroked-button class="btn-emp-search" (click)="searchEmployee()">
+        <mat-icon>search</mat-icon> Search Employee
+      </button>
+    </div>
+    </div>
+    <div *ngIf="showReport">
+      <dx-report-viewer [reportUrl]="reportUrl" height="760px">
+        <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
+        <dxrv-callbacks (CustomizeElements)="onCustomizeElements($event)" (BeforeRender)="BeforeRender($event)">
+        </dxrv-callbacks>
+      </dx-report-viewer>
+    </div>
+  </div> 

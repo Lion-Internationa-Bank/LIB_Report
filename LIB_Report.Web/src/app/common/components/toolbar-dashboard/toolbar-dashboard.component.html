@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="mat-elevation-z8 justify-between">
+  <div class="flex flex-row">
+    <button mat-icon-button (click)="mainNav.toggle()">
+      <mat-icon class="text-white">menu</mat-icon>
+    </button>
+    <a routerLink="/main/customer/dashboard" class="flex justify-center items-center"
+    >
+      <img class="w-24 rounded" [src]="configService.assetsUrl+'/logo/LION-logo.jpg'" alt="logo">
+      <span class="ml-2 ft-1 text-white" *ngIf="currentLang=='en'">Forage Genebank</span>
+    </a>
+  </div>
+
+  <div>
+    <!-- <app-lang-switcher></app-lang-switcher> -->
+    <button *ngIf="isUserLoggedIn" class="text-white" mat-button [matMenuTriggerFor]="accountMenu"
+            matTooltip="Account">
+      <mat-icon class="menu-button">account_circle</mat-icon>
+
+      <span class="text-white" >{{ fullNameInLang }}</span>
+    </button>
+    <mat-menu #accountMenu="matMenu">
+      <button *ngFor="let menu of accountMenuItems" mat-menu-item
+              (click)="router.navigateByUrl(menu.path)">
+        <mat-icon>{{ menu.iconType }}</mat-icon>
+        <span>{{ menu.title | translate }}</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>login</mat-icon>
+        <span>{{ 'Log out' | translate }}</span>
+      </button>
+    </mat-menu>
+    <!--  <span>{{ 'common.commands.Search' | translate }}</span>-->
+  </div>
+
+</mat-toolbar>

@@ -1,0 +1,56 @@
+/* src/styles.scss */
+
+/* 1. Use Angular Material's theme */
+@use './theme' as mat-theme;
+
+/* 2. Import Tailwind's base styles */
+@tailwind base;
+
+/* 3. Import Tailwind's component styles */
+@tailwind components;
+
+/* 4. Import Tailwind's utility styles */
+@tailwind utilities;
+
+/* 5. Include any global styles here */
+
+/* Example: Apply a background color using Tailwind */
+
+body {
+  @apply bg-gray-100;
+}
+
+@import 'ngx-toastr/toastr';
+
+@import '~material-design-icons/iconfont/material-icons.css';
+
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch { border-right-style: hidden; }
+.mat-mdc-select-multiple {
+  border: hidden !important;
+  padding-top: 0 !important;
+  border-width: 0px !important ;
+}
+
+.custom-backdrop {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+.mdc-dialog{
+  width: auto !important;
+}
+.mat-mdc-dialog-container{
+  width: 100% !important;
+}
+
+.mat-toolbar.mat-primary {
+  --mat-toolbar-container-background-color: #324e6c;
+  --mat-toolbar-container-text-color: #fff;
+  height: 70px;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  background-color: #324e6c;
+  color: #fff;
+}
+
+

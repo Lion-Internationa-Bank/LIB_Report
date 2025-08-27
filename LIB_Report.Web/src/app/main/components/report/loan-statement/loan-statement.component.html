@@ -1,0 +1,36 @@
+<div class="p-8 grid grid-cols-1">
+    <div  [formGroup]="SearchConservationForm" class="flex gap-4 items-center bg-white p-2 rounded shadow">
+
+      <!-- <mat-form-field >
+        <mat-label> Date From</mat-label>
+        <input formControlName="DateFrom" matInput [matDatepicker]="DateFrom">
+        <mat-datepicker-toggle matSuffix [for]="DateFrom"></mat-datepicker-toggle>
+        <mat-datepicker #DateFrom></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label> Date To</mat-label>
+        <input formControlName="DateTo" matInput [matDatepicker]="DateTo">
+        <mat-datepicker-toggle matSuffix [for]="DateTo"></mat-datepicker-toggle>
+        <mat-datepicker #DateTo></mat-datepicker>
+      </mat-form-field> -->
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Employee Id</mat-label>
+        <input matInput formControlName="EmpId" placeholder="Employee Id" value="">
+      </mat-form-field>
+     
+      <button mat-stroked-button (click)="submitParameter()">
+        <mat-icon>search</mat-icon>
+      </button>
+
+     
+    </div>
+    <div *ngIf="showReport">
+      <dx-report-viewer [reportUrl]="reportUrl" height="760px">
+        <dxrv-request-options [invokeAction]="invokeAction" [host]="hostUrl"></dxrv-request-options>
+        <dxrv-callbacks (CustomizeElements)="onCustomizeElements($event)" (BeforeRender)="BeforeRender($event)">
+        </dxrv-callbacks>
+      </dx-report-viewer>
+    </div>
+  </div> 
