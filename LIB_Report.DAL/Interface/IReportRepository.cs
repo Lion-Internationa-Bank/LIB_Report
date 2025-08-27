@@ -8,7 +8,6 @@ namespace LIB_Report.DAL.Repository
 {
    public interface IReportRepository
     {
-        List<LoanStatement> GetLoanStatement(DateTime DateFrom, DateTime DateTo);
         List<Employee> GetEmpoyeeInformation(string empId);
         List<EmployeeWorkExperience> GetEmpoyeeWorkExperience(string empId);
         List<PreviousEmployeeWorkExperience> GetPreEmpoyeeWorkExperience(string empId);

@@ -6,7 +6,6 @@ import {MainComponent} from './main.component';
 import {RouterModule} from '@angular/router';
 
 
-import { SidebarModule } from '../common/components/sidebar/sidebar.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 export const routes = [

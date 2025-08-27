@@ -24,6 +24,7 @@ namespace LIB_Report.DAL.Contexts
         public DbSet<BusinessUnit> BusinessUnit { get; set; }
         public DbSet<EmployeeFile> EmployeeFile { get; set; }
         public DbSet<JobsTitle> JobsTitle { get; set; }
+        public DbSet<EmplAct> EmplAct { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -37,6 +38,7 @@ namespace LIB_Report.DAL.Contexts
             builder.Entity<EmployeePerformanceRate>().HasNoKey();
             builder.Entity<EmployeeSalaryHistory>().HasNoKey();
             builder.Entity<EmployeeFile>().HasNoKey();
+            builder.Entity<EmplAct>().HasNoKey();
 
         }
     }

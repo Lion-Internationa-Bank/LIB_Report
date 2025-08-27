@@ -13,7 +13,7 @@ namespace LIB_Report.UI.Infrastructure
             {
                 options.AddPolicy("CorsPolicy",
                           builder =>
-                           builder.WithOrigins($"http://10.1.10.43", $"http://10.1.10.43:9091")
+                           builder.WithOrigins($"http://10.1.10.43", $"http://10.1.10.43:9091", "http://localhost:4200")
                             .AllowAnyHeader()
                             .AllowAnyMethod()
                          .AllowCredentials());

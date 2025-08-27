@@ -2,8 +2,8 @@ export const environment = {
   production: false,
   baseUrl: 'http://localhost:54133/',
   //baseUrl: 'http://10.1.10.43:9090/',
-  tokenUrl: 'https://10.1.10.106:4040/',
-  loginUrl: 'https://10.1.10.106:4040/',
+  tokenUrl: 'http://10.1.10.106:4040/',
+  loginUrl: 'http://10.1.10.106:4040/',
   assetsUrl: '/assets',
 }
 

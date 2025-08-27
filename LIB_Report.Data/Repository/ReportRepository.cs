@@ -1,15 +1,10 @@
-﻿using LIB_Report.DAL;
-using LIB_Report.DAL.DTO;
-using LIB_Report.DAL.Repository;
+﻿using LIB_Report.DAL.Repository;
 using LIB_Report.DAL.Contexts;
 using LIB_Report.DAL.Entity;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LIB_Report.Infra.Data.Repository
 {
@@ -26,32 +21,6 @@ namespace LIB_Report.Infra.Data.Repository
         {
         }
 
-        //public List<LoanStatement> GetLoanStatement(DateTime DateFrom, DateTime DateTo)
-        //{
-        //    using (var dbContextScope = _reportDBContext.GetDbContextScope())
-        //    {
-        //       // var columnValue = new SqlParameter("columnValue", "http://SomeURL");
-        //        var loanstatementList = dbContextScope.DbContext.LoanStatement.FromSqlRaw(@"SELECT LOANSTATMENT.DCO, LOANSTATMENT.SEN, LOANSTATMENT.MON, LOANSTATMENT.NOMREST, LOANSTATMENT.NAT,
-        //                                LOANSTATMENT.LIBE, LOANSTATMENT.EVE, LOANSTATMENT.TYP, LOANSTATMENT.AGE FROM  
-        //                                ANBESAPROD.LOANSTATMENT LOANSTATMENT WHERE   NOT (LOANSTATMENT.NAT='001' OR
-        //                                LOANSTATMENT.NAT='002' OR LOANSTATMENT.NAT='003' OR LOANSTATMENT.NAT='006' OR
-        //                                LOANSTATMENT.NAT='009') AND  NOT (LOANSTATMENT.LIBE LIKE 'DUE DATE % AMORTISATION'
-        //                                OR LOANSTATMENT.LIBE LIKE 'DUE DATE % AMORTIZATION' OR LOANSTATMENT.LIBE LIKE 'DUE DATE % UNPAID' OR 
-        //                                LOANSTATMENT.LIBE LIKE 'IMPL. EXPENSE    CHGES' OR LOANSTATMENT.LIBE LIKE 'IMPL. EXPENSE    COMMISSION 1' OR 
-        //                                LOANSTATMENT.LIBE LIKE 'IMPL. EXPENSE    PAYMENT' OR LOANSTATMENT.LIBE LIKE 'PAYMT/UNP% AMORTIZATION') AND 
-        //                                NOT (LOANSTATMENT.TYP='005' OR LOANSTATMENT.TYP='006') ORDER BY
-        //                                LOANSTATMENT.LIBE, LOANSTATMENT.EVE", "").ToList();
-        //        return loanstatementList;
-        //    }
-        //} 
-
-
-
-        public List<LoanStatement> GetLoanStatement(DateTime DateFrom, DateTime DateTo)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Employee>  GetEmpoyeeInformation(string empId)
         {
             using (var dbContextScope = _reportDBContext.GetDbContextScope())
@@ -64,6 +33,20 @@ namespace LIB_Report.Infra.Data.Repository
         {
             using (var dbContextScope = _reportDBContext.GetDbContextScope())
             {
+               var empAct = dbContextScope.DbContext.EmplAct.Where(x => x.EmplID == empId).OrderByDescending(p => p.FromDT).ToList();
+                var empExp = dbContextScope.DbContext.EmployeeWorkExperience.Where(x => x.EmplID == empId).OrderByDescending(p => p.FromDT).ToList();
+                 List<EmployeeWorkExperience> empExpAct = new List<EmployeeWorkExperience>();
+                foreach (var emp in empAct)
+                {   
+                    EmployeeWorkExperience empWork = new EmployeeWorkExperience();
+                    empWork.EmplID = emp.EmplID ;
+                    empWork.PlacAssg = emp.UnitName;
+                    empWork.PosTitle = emp.PosTitle;
+                    empWork.FromDT = emp.FromDT;
+                    empWork.ToDT = emp.ToDT;
+                    empExpAct.Add(empWork);
+                }
+                empExp.AddRange(empExpAct);
                 return dbContextScope.DbContext.EmployeeWorkExperience.Where(x => x.EmplID == empId).OrderByDescending(p=>p.FromDT).ToList();
             }
         }

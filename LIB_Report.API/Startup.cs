@@ -153,7 +153,7 @@ namespace LIB_Report.UI
                 endpoints.MapControllers();
             });
 
-            Initialize(app.ApplicationServices);
+            //Initialize(app.ApplicationServices);
         }
         private static void Initialize(IServiceProvider service)
         {
@@ -161,7 +161,7 @@ namespace LIB_Report.UI
             {
 
                 var scopeServiceProvider = serviceScope.ServiceProvider;
-                var db = scopeServiceProvider.GetService<ReportDBContext>();
+                //var db = scopeServiceProvider.GetService<ReportDBContext>();
 
             }
         }
