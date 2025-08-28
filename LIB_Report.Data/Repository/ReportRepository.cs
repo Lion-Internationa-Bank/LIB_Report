@@ -68,8 +68,10 @@ namespace LIB_Report.Infra.Data.Repository
                                             Empls.EmplID, Gender, Jobs.JobTitle, BusUnits.UnitName, JobPositions.PosTitle, 
                                             EthnGroup.EthnName as EthnID, TIN_No, MobileNo,case when MaritalStatus=0 then 'Single' when MaritalStatus=1 then 'Married'
 											when MaritalStatus=2 then 'Widowed' when MaritalStatus=3 then 'Divorced' end as MaritalStatus, DateJoined, BirthDate, Empls.Roman as Grade, Empls.SalaryAmt, AccountNo, State ,
-                                            (select top(1) EmplAct.PosTitle from EmplAct where EmplAct.EmplID=Empls.EmplID order by ToDT desc) as ActiveActing , Empls.DateOnPos as DateofLastPosition, Empls.LevelID as Qualification,
-                                            case when Empls.Status='A' then 'Active' when Empls.Status='I' then 'InActive' end as Status, EmplImages.EmplPhoto, Profs.ProfName,
+                                            (select top(1) EmplAct.PosTitle from EmplAct where EmplAct.EmplID=Empls.EmplID order by ToDT desc) as ActiveActing ,
+											(select top(1) case when EmplAct.Active='Y' then 'Active' when Empls.Status='N' then '-' end as Status from EmplAct where EmplAct.EmplID=Empls.EmplID order by ToDT desc) as Status,
+											Empls.DateOnPos as DateofLastPosition, Empls.LevelID as Qualification,
+                                            EmplImages.EmplPhoto, Profs.ProfName,
 											case when Empls.JobCatID=0 then 'Managerial' when Empls.JobCatID=1 then 'Professional' when Empls.JobCatID=2 then 'Clerical'
 											when Empls.JobCatID=3 then 'Non-Clerical' end as JobCategory,
 											Cast((Empls.ServDays / 365) as nvarchar) +' year '+ Cast(((Empls.ServDays % 365) /30) as nvarchar) +' month ' + Cast(((Empls.ServDays % 365) % 30) as nvarchar) +' days' as Services,
@@ -154,6 +156,16 @@ namespace LIB_Report.Infra.Data.Repository
                 var empIdvalue = new SqlParameter("@empId", empId);
                 var empFile = dbContextScope.DbContext.EmployeeFile.FromSqlRaw(@"select Remark from EmplFile
                         WHERE EmplFile.EmplID =@empId", empIdvalue).ToList();
+                if(empFile.Count == 0)
+                {
+                    return new List<EmployeeFile> {
+                        new EmployeeFile
+                        {
+                            Remark="Clean  Personal File(HRA system)"
+                        }
+                    };
+                }
+
                 return empFile;
             }
         }

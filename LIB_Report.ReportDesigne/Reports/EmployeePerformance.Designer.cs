@@ -236,8 +236,10 @@
             // 
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[RateBy]")});
+            this.tableCell8.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
+            this.tableCell8.StylePriority.UseFont = false;
             this.tableCell8.Weight = 0.4080495677339081D;
             // 
             // objectDataSource1

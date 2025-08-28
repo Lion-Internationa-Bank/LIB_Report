@@ -189,9 +189,11 @@
             this.tableCell6.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.tableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
+            this.tableCell6.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell6.Name = "tableCell6";
             this.tableCell6.StyleName = "DetailData1";
             this.tableCell6.StylePriority.UseBorders = false;
+            this.tableCell6.StylePriority.UseFont = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.tableCell6.Summary = xrSummary1;
             this.tableCell6.Weight = 0.063170973833869493D;
@@ -200,8 +202,10 @@
             // 
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FromDT]")});
+            this.tableCell7.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.StyleName = "DetailData1";
+            this.tableCell7.StylePriority.UseFont = false;
             this.tableCell7.TextFormatString = "{0:MM/dd/yyyy}";
             this.tableCell7.Weight = 0.18970652860753676D;
             // 
@@ -209,8 +213,10 @@
             // 
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ToDT]")});
+            this.tableCell8.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
+            this.tableCell8.StylePriority.UseFont = false;
             this.tableCell8.TextFormatString = "{0:MM/dd/yyyy}";
             this.tableCell8.Weight = 0.14429312313304227D;
             // 
@@ -218,16 +224,20 @@
             // 
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[JobTitle]")});
+            this.tableCell9.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.StyleName = "DetailData1";
+            this.tableCell9.StylePriority.UseFont = false;
             this.tableCell9.Weight = 0.18972388772403492D;
             // 
             // tableCell10
             // 
             this.tableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PrevOrgName]")});
+            this.tableCell10.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell10.Name = "tableCell10";
             this.tableCell10.StyleName = "DetailData1";
+            this.tableCell10.StylePriority.UseFont = false;
             this.tableCell10.Weight = 0.30036046645220588D;
             // 
             // objectDataSource1

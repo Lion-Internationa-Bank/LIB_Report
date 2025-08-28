@@ -266,9 +266,11 @@
             // 
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
+            this.xrTableCell3.Font = new System.Drawing.Font("Arial", 7F);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StyleName = "DetailData1";
+            this.xrTableCell3.StylePriority.UseFont = false;
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.xrTableCell3.Summary = xrSummary2;
             this.xrTableCell3.Weight = 0.097754649090026083D;
@@ -277,8 +279,10 @@
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TrnTitle]")});
+            this.xrTableCell4.Font = new System.Drawing.Font("Arial", 7F);
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StyleName = "DetailData1";
+            this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.Weight = 0.60858690177544206D;
             // 
             // tableCell7
@@ -286,16 +290,20 @@
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString(\'{0: MM/dd/yyyy}\', [FromDT]) +\' - \'+ FormatString(\'{0: MM/dd/yyyy}\'," +
                     "[ToDT])")});
+            this.tableCell7.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell7.Name = "tableCell7";
             this.tableCell7.StyleName = "DetailData1";
+            this.tableCell7.StylePriority.UseFont = false;
             this.tableCell7.Weight = 0.30758667650201632D;
             // 
             // tableCell8
             // 
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ShortName]")});
+            this.tableCell8.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell8.Name = "tableCell8";
             this.tableCell8.StyleName = "DetailData1";
+            this.tableCell8.StylePriority.UseFont = false;
             this.tableCell8.Weight = 0.32124641711202584D;
             // 
             // bottomMarginBand1

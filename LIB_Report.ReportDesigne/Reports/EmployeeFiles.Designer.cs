@@ -65,7 +65,7 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.label1});
-            this.ReportHeader.HeightF = 31.87501F;
+            this.ReportHeader.HeightF = 24.19433F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // label1
@@ -106,9 +106,11 @@
             this.tableCell2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.tableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Remark]")});
+            this.tableCell2.Font = new System.Drawing.Font("Arial", 7F);
             this.tableCell2.Name = "tableCell2";
             this.tableCell2.StyleName = "DetailData1";
             this.tableCell2.StylePriority.UseBorders = false;
+            this.tableCell2.StylePriority.UseFont = false;
             this.tableCell2.Weight = 1D;
             // 
             // objectDataSource1
