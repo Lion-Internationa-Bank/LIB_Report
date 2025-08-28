@@ -68,7 +68,7 @@ namespace LIB_Report.Infra.Data.Repository
                                             Empls.EmplID, Gender, Jobs.JobTitle, BusUnits.UnitName, JobPositions.PosTitle, 
                                             EthnGroup.EthnName as EthnID, TIN_No, MobileNo,case when MaritalStatus=0 then 'Single' when MaritalStatus=1 then 'Married'
 											when MaritalStatus=2 then 'Widowed' when MaritalStatus=3 then 'Divorced' end as MaritalStatus, DateJoined, BirthDate, Empls.Roman as Grade, Empls.SalaryAmt, AccountNo, State ,
-                                            (select top(1) EmplAct.PosTitle from EmplAct where EmplAct.EmplID=Empls.EmplID) as ActiveActing , Empls.DateOnPos as DateofLastPosition, Empls.LevelID as Qualification,
+                                            (select top(1) EmplAct.PosTitle from EmplAct where EmplAct.EmplID=Empls.EmplID order by ToDT desc) as ActiveActing , Empls.DateOnPos as DateofLastPosition, Empls.LevelID as Qualification,
                                             case when Empls.Status='A' then 'Active' when Empls.Status='I' then 'InActive' end as Status, EmplImages.EmplPhoto, Profs.ProfName,
 											case when Empls.JobCatID=0 then 'Managerial' when Empls.JobCatID=1 then 'Professional' when Empls.JobCatID=2 then 'Clerical'
 											when Empls.JobCatID=3 then 'Non-Clerical' end as JobCategory,
