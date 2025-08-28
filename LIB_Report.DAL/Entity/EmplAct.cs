@@ -15,8 +15,7 @@ namespace LIB_Report.DAL.Entity
         public string RefNo { get; set; } 
         public string PosID { get; set; } 
         public string PosTitle { get; set; } 
-        public string EntryBy { get; set; } 
-        public long SysID { get; set; } 
+        public string EntryBy { get; set; }
         public string UnitName { get; set; } 
     }
 }

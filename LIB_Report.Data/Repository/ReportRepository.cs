@@ -41,13 +41,13 @@ namespace LIB_Report.Infra.Data.Repository
                     EmployeeWorkExperience empWork = new EmployeeWorkExperience();
                     empWork.EmplID = emp.EmplID ;
                     empWork.PlacAssg = emp.UnitName;
-                    empWork.PosTitle = emp.PosTitle;
+                    empWork.PosTitle = emp.PosTitle + " (Acting)";
                     empWork.FromDT = emp.FromDT;
                     empWork.ToDT = emp.ToDT;
                     empExpAct.Add(empWork);
                 }
                 empExp.AddRange(empExpAct);
-                return dbContextScope.DbContext.EmployeeWorkExperience.Where(x => x.EmplID == empId).OrderByDescending(p=>p.FromDT).ToList();
+                return empExp;
             }
         }
 
